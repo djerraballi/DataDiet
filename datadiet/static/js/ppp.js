@@ -1,0 +1,5 @@
+
+
+testFunc = function() {
+    alert('aaa');
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal">
+
+<head>
+	<title>Data Diet Home Page</title>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/carbs/">Carbohydrates</a></li>
+		<li><a href="/proteins/">Proteins</a></li>
+		<li><a href="/veggies/">Veggies</a></li>
+		<li><a href="/sweeties/">Sweeties</a></li>
+		<li><a href="/login/">Login/Register</a></li>
+	</ul>
+</body>
+
+</html>

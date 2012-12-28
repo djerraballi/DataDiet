@@ -1,0 +1,37 @@
+<html metal:use-macro="load: main.pt">
+	
+<div metal:fill-slot="head">
+	<title>Login: Data Diet</title>
+</div>
+
+<div metal:fill-slot="content">
+	<div class="container">
+		<form method="POST" action="${url}" class="form-horizontal">
+			<fieldset>
+				<legend>Login</legend>
+				<input type="hidden" name="came_from" value="${came_from}" />
+
+				<div class="control-group">
+					<label class="control-label" for="username">Username</label>
+					<div class="controls">
+						<input type="text" class="input-medium" placeholder="username" id="username" name="username" value="${username}">
+					</div>
+
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="password">Password</label>
+					<div class="controls">
+						<input type="password" class="input-medium" placeholder="password" id="password"  name="password">
+					</div>
+				</div>
+
+				<div class="form-actions">
+					<button type="submit" name="form.submitted" class="btn">Login</button> ${message}
+				</div>
+			</fieldset>
+		</form>
+		<a href="/datadiet/register">Don't Have An Account?</a>
+	</div>
+</div>
+
+</html>

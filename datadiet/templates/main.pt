@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href="${request.static_url('theproject:static/css/bootstrap.css')}" rel="stylesheet"/>
+	<style>
+	    body {
+	    	padding-top: 60px;
+	   	}
+	</style>
+	<div metal:define-slot="head"></div>
+</head>
+<body>
+	<div class = "navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class=" btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="/datadiet">DataDiet</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="active"><a href="/datadiet">Home</a></li>
+						<li><a href="/datadiet/login">Login/Register</a></li>
+						<li><a href="/datadiet/cpost">Create Post</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div metal:define-slot="content"></div>
+</body>
+</html>

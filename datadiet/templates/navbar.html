@@ -1,0 +1,45 @@
+<html>
+    <head>
+    	<title>My Facebook Login Page</title>
+        <link rel="stylesheet" href="../public/css/bootstrap.css">
+	    <link rel="styleshet" href="../public/css/bootswatch.less">
+	    <link rel="stylesheet" href="../public/css/variables.less">
+	    <style>
+	    	body {
+	    		padding-top: 60px;
+	    	}
+	    </style>
+	    <link rel="stylesheet" href="bootstrap-responsive.css">
+    </head>
+
+    
+	<body>
+    <script type="text/javascript" src="../public/js/jquery-1.8.0.js"></script>
+	<script type="text/javascript" src="../public/js/bootstrap.js"></script>
+	
+	
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+					<li class="active">
+						<a class="brand" href="#">The DataDiet</a>
+					</li>
+					<li><a href="/carbs/">Carbohydrates</a></li>
+			  		<li><a href="/proteins/">Proteins</a></li>
+			  		<li><a href="/veggies/">Veggies</a></li>
+			  		<li><a href="/sweeties/">Sweeties</a></li>
+			  		<li><a href="/login/">Login/Register</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="Module">
+		{% block content %}{% endblock %}
+	</div>
+
+
+	</body>
+</html>

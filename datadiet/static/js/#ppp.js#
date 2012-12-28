@@ -1,0 +1,11 @@
+
+
+//namespace ppp-everything goes there
+ppp = {};
+
+
+///
+ppp.util = {}
+testFunc = function() {
+    alert('aaa');
+}

@@ -2,7 +2,6 @@ import unittest
 
 from pyramid import testing
 
-
 class ViewTests(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
@@ -14,4 +13,4 @@ class ViewTests(unittest.TestCase):
         from .views import my_view
         request = testing.DummyRequest()
         info = my_view(request)
-        self.assertEqual(info['project'], 'DataDiet')
+        self.assertEqual(info['project'], 'TheProject')
