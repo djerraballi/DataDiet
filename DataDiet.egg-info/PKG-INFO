@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: DataDiet
+Version: 0.0
+Summary: DataDiet
+Home-page: erraballer.com
+Author: Dheeraj Errabali
+Author-email: dj.erraballi@gmail.com
+License: UNKNOWN
+Description: DataDiet README
+        
+        
+        0.0
+        ---
+        
+        -  Initial version
+        
+Keywords: web pyramid pylons
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Pyramid
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
