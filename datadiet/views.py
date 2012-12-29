@@ -36,7 +36,7 @@ def home_view(request):
     #check if user is logged in
     username = request.cookies.get('username', 0)
     #get posts
-    db = mysql.connect('localhost', 'root', '', 'data_diet')
+    db = mysql.connect('mysql.server', 'polypatentpendin', 'Patent33!', 'polypatentpending$data_diet')
     cur = db.cursor()
     cur.execute("""SELECT * FROM posts, postAggregates WHERE posts.post_id = postAggregates.post_id ORDER BY hotness""")
     preprocessed_posts=cur.fetchall()
@@ -69,7 +69,7 @@ def login(request):
         password = request.params['password']
 
         #validate user in database
-        db = mysql.connect('localhost', 'root', '', 'data_diet')
+        db = mysql.connect('mysql.server', 'polypatentpendin', 'Patent33!', 'polypatentpending$data_diet')
         cur = db.cursor()
         cur.execute("""SELECT users.username FROM users WHERE username=%s AND password=md5(%s)""", (username, password))
         username_check = cur.fetchone()
@@ -112,7 +112,7 @@ def create_user(request):
             #failed input return
             return {'project':'DataDiet'}
 
-        db = mysql.connect('localhost', 'root', '','data_diet')
+        db = mysql.connect('mysql.server', 'polypatentpendin', 'Patent33!', 'polypatentpending$data_diet')
         cur = db.cursor()
         cur.execute("""INSERT INTO posts (title, body, hyperlink, username, creation_date) values (%s, %s, %s, %s, NOW())""", (title, body, hyperlink, username))
         db.commit()
@@ -131,7 +131,7 @@ def create_user(request):
         #email validation
         if email=='':
             email = None
-        db = mysql.connect('localhost', 'root', '','data_diet')
+        db = mysql.connect('mysql.server', 'polypatentpendin', 'Patent33!', 'polypatentpending$data_diet')
         #check for user, email in database
         cur=db.cursor()
         cur.execute("""SELECT username FROM users WHERE username=%s""", (username))
