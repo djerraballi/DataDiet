@@ -4,49 +4,51 @@
 </div>
 
 <div metal:fill-slot="content">
-	<form method="POST" action="/datadiet/test_add_post" class="form-horizontal">
-		<fieldset>
-			<legend>Create Post</legend>
+	<div class="container">
+		<form method="POST" action="/datadiet/test_add_post" class="form-horizontal">
+			<fieldset>
+				<legend>Create Post</legend>
 
-			<div class="control-group">
-				<label class="control-label" for="username">Title</label>
-				<div class="controls">
-					<input type="text" class="input-medium" placeholder="Title" id="title" name="title">
+				<div class="control-group">
+					<label class="control-label" for="username">Title</label>
+					<div class="controls">
+						<input type="text" class="input-medium" placeholder="Title" id="title" name="title">
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<label class="control-label" for="body">Body</label>
-				<div class="controls">
-					<textarea class="input-xlarge" rows="3" placeholder="Write Stuff Here" id="body" name="body"></textarea>
+				<div class="control-group">
+					<label class="control-label" for="body">Body</label>
+					<div class="controls">
+						<textarea class="input-xlarge" rows="3" placeholder="Write Stuff Here" id="body" name="body"></textarea>
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<label class="control-label" for="hyperlink">Hyperlink</label>
-				<div class="controls">
-					<input type="text" class="input-large" placeholder="Link to news source here" name ="hyperlink" id="hyperlink">
+				<div class="control-group">
+					<label class="control-label" for="hyperlink">Hyperlink</label>
+					<div class="controls">
+						<input type="text" class="input-large" placeholder="Link to news source here" name ="hyperlink" id="hyperlink">
+					</div>
 				</div>
-			</div>
 
-			<div class="control=group">
-				<label class="control-label" for="DietTag">Diet Tag Select</label>
-				<div class="controls">
-					<select name ="DietTag" id="DietTag">
-						<option value="carb">Carbohydrate</option>
-						<option value="protein">Protein</option>
-						<option value="veggie">Vegetable</option>
-						<option value="dessert">Dessert</option>
-					</select>
+				<div class="control=group">
+					<label class="control-label" for="DietTag">Diet Tag Select</label>
+					<div class="controls">
+						<select name ="DietTag" id="DietTag">
+							<option value="carb">Carbohydrate</option>
+							<option value="protein">Protein</option>
+							<option value="veggie">Vegetable</option>
+							<option value="dessert">Dessert</option>
+						</select>
+					</div>
 				</div>
-			</div>
 
-			<div class="form-actions">
-				<button type="submit" class="btn">Add Post</button>
-			</div>
+				<div class="form-actions">
+					<button type="submit" class="btn">Add Post</button>
+				</div>
 
-		</fieldset>
-	</form>
+			</fieldset>
+		</form>
+	</div>
 </div>
 
 </html>
