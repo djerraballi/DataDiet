@@ -12,7 +12,6 @@
 				<p>${post['body']}</p>
 				<p><a href="">Like</a> <a href="">Dislike</a> <a class="btn btn-success btn-medium" href="${post['hyperlink']}">Go to Article</a> <a href="">${post['total_comments']} comments</a></p>
 				<p>${post['points']} points; ${post['since_added']} by <a href="">${post['username']}</a></p>
-				<!--${post['hyperlink']}-->
 				<!--${post['comment_link']}-->
 			</div>
 			
