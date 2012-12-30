@@ -40,9 +40,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid" style="display:inline">
-		<div class="row-fluid" style ="display:inline">
-			<div class="span2" style="display:inline">
+	<div class="container" style="display:inline">
+		<div class="row" style ="position:fixed">
+			<div class="span3" style="display:inline">
 				<div class= "well sidebar-nav" style="dislplay:inline">
 					<p><span class="label">Carbohydrate</span>: Content (Article/Website) is classified as a carb if the content serves to inform the general public, rather than a narrow faction of people who are interested in that content. Content that is generally classified as carbohydrate includes: World News, Politics, Health, Education, Businesses, etc. </p>
 
