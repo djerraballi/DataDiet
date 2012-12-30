@@ -125,7 +125,7 @@ def home_view(request):
     cur = db.cursor()
     cur.execute("""SELECT * FROM posts, postAggregates WHERE posts.post_id = postAggregates.post_id ORDER BY postAggregates.hotness DESC""")
     preprocessed_posts=cur.fetchall()
-    posts = [dict(post_id = row[0], title=row[1], body=row[2], hyperlink=row[3], username=row[4], since_added=process_date_added(row[5]), points=(row[9]-row[10]), comment_link="/datadiet/comments/" + str(row[0]), total_comments=row[11]) for row in preprocessed_posts]
+    posts = [dict(post_id = row[0], title=row[1], body=row[2], hyperlink=row[3], username=row[4], since_added=process_date_added(row[5]), points=(row[9]-row[10]), comment_link="/comments/" + str(row[0]), total_comments=row[11]) for row in preprocessed_posts]
     for post in posts:
         cur.execute("""SELECT diet_tag_name, MAX(reinforcements) FROM postDietTag WHERE postDietTag.post_id = %s""", post['post_id'])
         diettag = cur.fetchone()[0]
@@ -139,7 +139,7 @@ def login(request):
     login_url = request.resource_url(request.context, 'login')
     referrer = request.url
     if referrer == login_url:
-        referrer='/datadiet'
+        referrer='/'
     came_from = request.params.get('came_from', referrer)
     message=''
     username=''
@@ -173,7 +173,7 @@ def logout(request):
     logout_url = request.resource_url(request.context, 'logout')
     referrer = request.url
     if referrer == logout_url:
-        referrer = '/datadiet'
+        referrer = '/'
     came_from = request.params.get('came_from', referrer)
 
     return HTTPFound(location=came_from, headers=headers)
@@ -186,7 +186,7 @@ def create_post(request):
     body=''
     hyperlink=''
     diettag='Carbohydrate'
-    came_from = request.params.get('came_from', '/datadiet')
+    came_from = request.params.get('came_from', '/')
     
     if 'form.submitted' in request.params:
         title = request.params['title']
@@ -215,7 +215,7 @@ def register_screen(request):
     login_url = request.resource_url(request.context, 'register')
     referrer = request.url
     if referrer == login_url:
-        referrer='/datadiet'
+        referrer='/'
     came_from = request.params.get('came_from', referrer)
 
     message=''
@@ -256,7 +256,7 @@ def register_screen(request):
 def post_liker(request):
     username, logged_in = check_logged_in(request)
 
-    referrer = '/datadiet'
+    referrer = '/'
     came_from = request.params.get('came_from', referrer) 
 
     if logged_in == 0:
