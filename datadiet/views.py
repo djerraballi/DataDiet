@@ -59,7 +59,7 @@ def db_create_post(db, title, body, hyperlink, username, diettag):
     cur = db.cursor()
     cur.execute("""SELECT creation_date FROM posts WHERE posts.post_id = %s """, last_row_id)
     date = cur.fetchone()[0]
-    cur.execute("""INSERT INTO postAggregates (post_id, rating, hotness, total_likes, total_dislikes, total_comments) VALUES (%s, %s, LOG10(TIME_TO_SECONDS(%s)), %s, %s, %s)""", (last_row_id, 0, date, 0, 0, 0))
+    cur.execute("""INSERT INTO postAggregates (post_id, rating, hotness, total_likes, total_dislikes, total_comments) VALUES (%s, %s, LOG10(TIME_TO_SEC(%s)), %s, %s, %s)""", (last_row_id, 0, date, 0, 0, 0))
     db.commit()
     cur=db.cursor()
     cur.execute("""INSERT INTO postDietTag (post_id, diet_tag_name, reinforcements) VALUES (%s, %s, %s)""", (last_row_id, diettag, 1))
