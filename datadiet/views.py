@@ -284,6 +284,7 @@ def tags(request):
         return HTTPFound(location=came_from)
     else:
         #show add tag form diet tags/content tags
+        return HTTPFound(location=came_from)
 
         
 
