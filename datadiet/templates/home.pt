@@ -9,14 +9,14 @@
 			<div tal:repeat="post posts" class="span4">
 				<h3>${post['title']}</h3>
 				<span style="display: inline" class="${post['diet_class']}">${post['diettag']}</span>
-				<form method="POST" action="/datadiet/" style="display: inline">
+				<form method="POST" action="/" style="display: inline">
 					<input type="hidden" name="post_id" value="${post['post_id']}" />
 					<button name="add.tag" class="btn btn-small"><i class="icon-plus"></i></button>
 				</form>
 				<hr />
 				<p>${post['body']}</p>
 				<p>
-					<form method="POST" action="/datadiet/likes" style="display: inline">
+					<form method="POST" action="/likes" style="display: inline">
 						<input type="hidden" name="post_id" value="${post['post_id']}" />
 						<button name="post.liked" class="btn btn-small"><i class="icon-thumbs-up"></i></button> <button name="post.disliked" class="btn btn-small"><i class="icon-thumbs-down"></i></button>
 					</form>

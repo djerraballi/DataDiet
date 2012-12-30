@@ -18,16 +18,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="/datadiet">DataDiet</a>
+				<a class="brand" href="/">DataDiet</a>
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li class="active"><a href="/datadiet">Home</a></li>
-						<li><a href="/datadiet/cpost">Create Post</a></li>
+						<li><a href="/cpost">Create Post</a></li>
 						<li tal:switch="logged_in">
-							<a tal:case="True" href="/datadiet/logout">Logout, ${username}</a>
-							<a tal:case="False" href="/datadiet/login">Login/Register</a>
+							<a tal:case="True" href="/logout">Logout, ${username}</a>
+							<a tal:case="False" href="/login">Login/Register</a>
 						</li>
-						<form method ="POST" action="/datadiet/" class="navbar-search pull-right">
+						<form method ="POST" action="/" class="navbar-search pull-right">
 							<input class="input-small" type="text" name="keyword" placeholder="Search">
 							<select class="input-small" name="search_type" id="search_type">
 								<option value="Title">By Title</option>
