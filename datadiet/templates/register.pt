@@ -5,14 +5,14 @@
 
 <div metal:fill-slot="content">
 	<div class="container">
-		<form method="POST" action="/datadiet/test_create_user" class="form-horizontal">
+		<form method="POST" action="${url}" class="form-horizontal">
 			<fieldset>
 				<legend>Register</legend>
-
+				<input type="hidden" name="came_from" value="${came_from}" />
 				<div class="control-group">
 					<label class="control-label" for="username">Username</label>
 					<div class="controls">
-						<input type="text" class="input-medium" placeholder="username" id="username" name="username">
+						<input type="text" class="input-medium" placeholder="username" id="username" name="username" value="${username}">
 					</div>
 				</div>
 
@@ -24,21 +24,21 @@
 				</div>
 
 				<div class="control-group">
-					<label class="control-label" for="r-password">Password</label>
+					<label class="control-label" for="r_password">Password</label>
 					<div class="controls">
-						<input type="password" class="input-medium" placeholder="repeat password"  id="r-password" name ="r-password">
+						<input type="password" class="input-medium" placeholder="repeat password"  id="r_password" name ="r_password">
 					</div>
 				</div>
 
 				<div class="control-group">
 					<label class="control-label" for="email">Email Address</label>
 					<div class="controls">
-						<input type="text" class="input-medium" placeholder="email" id="email" name="email">
+						<input type="text" class="input-medium" placeholder="email" id="email" name="email" value="${email}">
 					</div>
 				</div>
 
 				<div class="form-actions">
-					<button type="submit" class="btn">Register</button>
+					<button type="submit" name = "form.submitted" class="btn">Register</button> ${message}
 				</div>
 			</fieldset>
 		</form>

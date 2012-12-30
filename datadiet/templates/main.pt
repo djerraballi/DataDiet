@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link href="${request.static_url('datadiet:static/css/bootstrap.css')}" rel="stylesheet"/>
+	<link href="${request.static_url('theproject:static/css/bootstrap.css')}" rel="stylesheet"/>
 	<style>
 	    body {
 	    	padding-top: 60px;
@@ -18,18 +18,43 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="/">DataDiet</a>
+				<a class="brand" href="/datadiet">DataDiet</a>
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li class="active"><a href="/">Home</a></li>
-						<li><a href="/login">Login/Register</a></li>
-						<li><a href="/cpost">Create Post</a></li>
+						<li class="active"><a href="/datadiet">Home</a></li>
+						<li><a href="/datadiet/cpost">Create Post</a></li>
+						<li tal:switch="logged_in">
+							<a tal:case="True" href="/datadiet/logout">Logout, ${username}</a>
+							<a tal:case="False" href="/datadiet/login">Login/Register</a>
+						</li>
+						<form method ="POST" action="/datadiet/" class="navbar-search pull-right">
+							<input class="input-small" type="text" name="keyword" placeholder="Search">
+							<select class="input-small" name="search_type" id="search_type">
+								<option value="Title">By Title</option>
+								<option value="Content">By Content Tag</option>
+							</select>
+						</form>
+
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div class="container-fluid" style="display:inline">
+		<div class="row-fluid" style ="display:inline">
+			<div class="span2" style="display:inline">
+				<div class= "well sidebar-nav" >
+					<p><span class="label">Carbohydrate</span>: Content (Article/Website) is classified as a carb if the content serves to inform the general public, rather than a narrow faction of people who are interested in that content. Content that is generally classified as carbohydrate includes: World News, Politics, Health, Education, Businesses, etc. </p>
 
+					<p><span class="label label-important">Protein</span>: Content is classified as a protein when it is considered useful to a specific field. Proteins help people master specific skills.</p>
+
+					<p><span class="label label-success">Vegetable</span>: Content is classified as a vegetable if the content is extremely boring, difficult, or uninteresting to consume; but at the same time it is still considered useful.</p>
+
+					<p><span class="label label-info">Sweets</span>: Content is classified as a sweet if it will not have a meaningful impact on anyone who consumes it but the content is extremely interesting, entertaining, or social.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div metal:define-slot="content"></div>
 </body>
 </html>

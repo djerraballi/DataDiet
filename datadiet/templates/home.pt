@@ -8,11 +8,22 @@
 
 			<div tal:repeat="post posts" class="span4">
 				<h3>${post['title']}</h3>
+				<span style="display: inline" class="${post['diet_class']}">${post['diettag']}</span>
+				<form method="POST" action="/datadiet/" style="display: inline">
+					<input type="hidden" name="post_id" value="${post['post_id']}" />
+					<button name="add.tag" class="btn btn-small"><i class="icon-plus"></i></button>
+				</form>
 				<hr />
 				<p>${post['body']}</p>
-				<p><a href="">Like</a> <a href="">Dislike</a> <a class="btn btn-success btn-medium" href="${post['hyperlink']}">Go to Article</a> <a href="">${post['total_comments']} comments</a></p>
+				<p>
+					<form method="POST" action="/datadiet/likes" style="display: inline">
+						<input type="hidden" name="post_id" value="${post['post_id']}" />
+						<button name="post.liked" class="btn btn-small"><i class="icon-thumbs-up"></i></button> <button name="post.disliked" class="btn btn-small"><i class="icon-thumbs-down"></i></button>
+					</form>
+					 <a class="btn btn-success btn-medium" href="${post['hyperlink']}">Go to Article</a>
+					  <a class="btn btn-small" href="${post['comment_link']}">${post['total_comments']} <i class="icon-comment"></i></a>
+				</p>
 				<p>${post['points']} points; ${post['since_added']} by <a href="">${post['username']}</a></p>
-				<!--${post['comment_link']}-->
 			</div>
 			
 		</div>

@@ -82,52 +82,39 @@ CREATE TABLE userPostLikes (
   foreign key (post_id) references posts(post_id)) ENGINE = INNODB;
 
 CREATE TABLE userCommentLikes (
-  username varchar(16),
+  username varchar(16), 
   comment_id integer unsigned NOT NULL,
-  like_status boolean,
+  like_status boolean, 
   primary key (username, comment_id),
   foreign key (username) references users(username),
   foreign key (comment_id) references comments(comment_id)) ENGINE = INNODB;
 
 /* aggregates - do i want to keep them in a seperate table*/
 
-CREATE TABLE postAggregates (
+CREATE TABLE postAggregates ( 
   post_id integer unsigned NOT NULL,
-  rating integer,
-  hotness integer,
-  total_likes integer,
+  rating double, 
+  hotness double, 
+  total_likes integer, 
   total_dislikes integer,
-  total_comments integer,
+  total_comments integer, 
   primary key (post_id),
   foreign key (post_id) references posts(post_id)) ENGINE = INNODB;
 
 CREATE TABLE commentAggregates (
-  comment_id integer unsigned NOT NULL,
-  total_likes integer,
-  total_dislikes integer,
-  points integer,
+  comment_id integer unsigned NOT NULL, 
+  total_likes integer, 
+  total_dislikes integer, 
+  points integer, 
   primary key (comment_id),
   foreign key (comment_id) references comments(comment_id)) ENGINE = INNODB;
 
-CREATE TABLE userAggregates (
+CREATE TABLE userAggregates ( 
   username varchar(16),
   karma integer,
   primary key (username),
   foreign key (username) references users(username)) ENGINE = INNODB;
 
-/* triggers */
-
-CREATE TRIGGER userCreation AFTER INSERT ON users
-  FOR EACH ROW
-    insert into userAggregates (username, karma) VALUES (NEW.username, 0);
-
-CREATE TRIGGER postCreation AFTER INSERT ON posts
-  FOR EACH ROW
-    insert into postAggregates (post_id, rating, hotness, total_likes, total_dislikes, total_comments) VALUES (NEW.post_id, 0, 0, 0, 0, 0);
-
-CREATE TRIGGER commentCreation AFTER INSERT ON comments
-  FOR EACH ROW
-    insert into commentAggregates (comment_id, total_likes, total_dislikes, points) VALUES (NEW.comment_id, 0, 0, 0, 0);
 
 
 /* diet tags */
