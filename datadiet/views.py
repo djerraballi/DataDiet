@@ -76,7 +76,7 @@ def db_add_content_tag(db, contenttag):
 
 def diet_tag_class(diettag):
     if diettag == "Carbohydrate":
-        diet_class="label-warning"
+        diet_class="label label-warning"
     elif diettag == "Protein":
         diet_class="label label-important"
     elif diettag == "Vegetable":
