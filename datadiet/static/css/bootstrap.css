@@ -227,6 +227,7 @@ a:hover {
 }
 .span4 {
   width: 300px;
+  min-height: 302px;
 }
 .span3 {
   width: 220px;
