@@ -44,13 +44,26 @@
 		<div class="row" style ="position:fixed">
 			<div class="span3" style="display:inline">
 				<div class= "well sidebar-nav" style="dislplay:inline">
-					<p><span class="label">Carbohydrate</span>: Content (Article/Website) is classified as a carb if the content serves to inform the general public, rather than a narrow faction of people who are interested in that content. Content that is generally classified as carbohydrate includes: World News, Politics, Health, Education, Businesses, etc. </p>
+					<p>Daily Values</p>
+					<p><span class="label">Carbohydrate</span></p>
+					<div class="progress progress progress-striped">
+						<div class="bar" style="width: 20%"></div>
+					</div>
+					
+					<p><span class="label label-important">Protein</span></p>
+					<div class="progress progress-important">
+						<div class="bar" style="width: 40%"></div>
+					</div>
 
-					<p><span class="label label-important">Protein</span>: Content is classified as a protein when it is considered useful to a specific field. Proteins help people master specific skills.</p>
+					<p><span class="label label-success">Vegetable</span></p>
+					<div class="progress progress-success">
+						<div class="bar" style="width: 60%"></div>
+					</div>
 
-					<p><span class="label label-success">Vegetable</span>: Content is classified as a vegetable if the content is extremely boring, difficult, or uninteresting to consume; but at the same time it is still considered useful.</p>
-
-					<p><span class="label label-info">Sweets</span>: Content is classified as a sweet if it will not have a meaningful impact on anyone who consumes it but the content is extremely interesting, entertaining, or social.</p>
+					<p><span class="label label-info">Sweets</span></p>
+					<div class="progress progress-info">
+						<div class="bar" style="width: 60%"></div>
+					</div>
 				</div>
 			</div>
 		</div>
